@@ -1,0 +1,13 @@
+JavaScript testing plugin
+=========================
+
+Usage:
+
+rake test:javascripts
+
+TODO
+
+* Some more docs :)
+* Make install task do something
+* Generator that provides for test skeletons
+* Make ^C aborting work
