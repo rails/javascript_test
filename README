@@ -1,13 +1,44 @@
 JavaScript testing plugin
 =========================
 
-Usage:
+This plugin provides the script.aculo.us JavaScript unit testing framework
+in way that integrates with Rails applications.
+
+Usage
+=====
+
+Use the provided generator to built a skeleton for your JavaScript test.
+The built-in rake task can then be used to automatically run the unit tests
+in various installed browsers (supported are Firefox on IE/Mac/Linux, 
+Safari on Mac, Konqueror on Linux).
+
+Note that due to the built-in webrick, you don't have to change anything
+about your app, just add tests. :)
+
+Example
+=======
+
+Generate a JavaScript test skeleton for your public/javascripts/foo.js file:
+
+script/generate javascript_test foo
+
+Run the unit tests (a "assertTruth" dummy test is provided, so you should see
+"SUCCESS" messages):
 
 rake test:javascripts
 
-TODO
+You'll find more info on how to write tests on the script.aculo.us wiki:
+http://wiki.script.aculo.us/scriptaculous/show/UnitTesting
 
-* Some more docs :)
-* Make install task do something
-* Generator that provides for test skeletons
+Questions?
+==========
+
+Join the Rails Spinoffs Google Group, or ask on #prototype on irc.freenode.net.
+
+TODO
+====
+
+* Some more docs and a presentation :)
 * Make ^C aborting work
+
+Copyright (c) 2005-2006 Thomas Fuchs, released under the MIT license
