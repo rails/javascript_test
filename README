@@ -27,6 +27,13 @@ controlled browsers in action:
   
 You have to manually close the browser window(s) afterwards.
 
+You can also run the test manually, by symlinking the assets directory.
+In your Rails application root, run:
+
+  ln -s ../../vendor/plugins/javascript_test/assets/ test/javascript/assets
+  
+You then can just open the individual .html test files in your browser.
+
 All in all, unittest.js is closely modelled on Test::Unit and there's 
 also experimental support for RSpec-style BDD testing. You can find lots 
 of examples in both the Prototype and script.aculo.us SVN repositories.

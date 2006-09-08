@@ -1,5 +1,7 @@
 *SVN*
 
+* Allow for manual execution of tests by manually providing an assets symlink (see README)
+
 * Updated CSS and generator to more Railsy layout and colors, borrowed from Tom Werners' #6036 default error pages patch
 
 * Add more info to README, add this CHANGELOG
