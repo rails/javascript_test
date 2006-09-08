@@ -1,9 +1,46 @@
-body, div, p, h1, h2, h3, ul, ol, span, a, table, td, form, img, li {
-  font-family: sans-serif;
-}
+body { 
+  margin-top: 0; 
+  padding: 0; 
+  background-color: #f0f0f0; 
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana", sans-serif; 
+  font-size: 13px; 
+  color: #333; 
+} 
 
-body {
-  font-size:0.8em;
+#content { 
+  margin: 0 auto; 
+  background-color: white; 
+  border: 3px solid #aaa; 
+  border-top: none; 
+  padding: 25px; 
+  width: 700px; 
+} 
+
+#header { 
+  height: 64px; 
+} 
+
+#header h1 { 
+  margin: 0; 
+  font-size: 28px; 
+  color: #800; 
+} 
+
+#header h2 { 
+  margin: 0; 
+  color: #888; 
+  font-weight: normal; 
+  font-size: 16px; 
+} 
+
+ul { 
+  padding: 0; 
+  margin: .5em 0 0 1.25em; 
+} 
+
+li { 
+  padding: .25em 0; 
+  line-height: 1.5em; 
 }
 
 #log {
@@ -20,7 +57,7 @@ body {
 }
 
 #logtable {
-  width:100%;
+  width: 100%;
   border-collapse: collapse;
   border: 1px dotted #666;
 }
@@ -37,4 +74,11 @@ body {
 
 #logtable .failed, #logtable .error {
   background-color: #fcc;
+}
+
+#footer { 
+  margin: 0 auto; 
+  width: 700px; 
+  text-align: center; 
+  color: #aaa; 
 }
