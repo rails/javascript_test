@@ -1,4 +1,4 @@
-require 'rake/tasklib'
+#require 'rake/tasklib'
 require 'thread'
 require 'webrick'
 
@@ -125,12 +125,24 @@ class ::WEBrick::BasicLog
   end
 end
 
+class NonCachingFileHandler < WEBrick::HTTPServlet::FileHandler
+  def do_GET(req, res)
+    super
+    res['etag'] = nil
+    res['last-modified'] = Time.now + 1000
+    res['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0"'
+    res['Pragma'] = 'no-cache'
+    res['Expires'] = Time.now - 1000
+  end
+end
+
 class JavaScriptTestrunner
 
   def initialize(name=:test)
     @name = name
     @tests = []
     @browsers = []
+    @result = true
 
     @queue = Queue.new
 
@@ -145,6 +157,10 @@ class JavaScriptTestrunner
     
     define
   end
+  
+  def successful?
+    @result
+  end
 
   def define
     trap("INT") { @server.shutdown }
@@ -158,6 +174,7 @@ class JavaScriptTestrunner
           browser.visit("http://localhost:4711#{test}?resultsURL=http://localhost:4711/results&t=" + ("%.6f" % Time.now.to_f))
           result = @queue.pop
           puts "#{test} on #{browser}: #{result}"
+          @result = false unless result == 'SUCCESS'
         end
         browser.teardown
       else
@@ -173,7 +190,7 @@ class JavaScriptTestrunner
   def mount(path, dir=nil)
     dir ||= (Dir.pwd + path)
 
-    @server.mount(path, WEBrick::HTTPServlet::FileHandler, dir)
+    @server.mount(path, NonCachingFileHandler, dir)
   end
 
   # test should be specified as a url
