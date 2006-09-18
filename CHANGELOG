@@ -1,5 +1,7 @@
 *SVN*
 
+* Add JavaScriptTest namespace wrapper
+
 * Added test for JavaScript test runner
 
 * Issue headers that prevent caching, #6218 [voidlock]

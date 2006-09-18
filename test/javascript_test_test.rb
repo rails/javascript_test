@@ -6,8 +6,8 @@ RAILS_ROOT = File.dirname(File.expand_path(__FILE__));
 
 class JavascriptTestTest < Test::Unit::TestCase
   
-  def test_javascript_testrunner
-    runner = JavaScriptTestrunner.new do |t| 
+  def test_javascript_test_runner
+    runner = JavaScriptTest::Runner.new do |t| 
       t.mount("/test", RAILS_ROOT+'/test')
       t.mount('/test/javascript/assets', RAILS_ROOT+'/../assets')
       t.run('test')

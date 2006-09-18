@@ -1,6 +1,6 @@
 desc "Run tests for JavaScripts"
 task 'test:javascripts' => :environment do
-  JavaScriptTestrunner.new do |t| 
+  JavaScriptTest::Runner.new do |t| 
     
     t.mount("/", RAILS_ROOT)
     t.mount("/test", RAILS_ROOT+'/test')
