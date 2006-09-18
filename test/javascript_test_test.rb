@@ -6,16 +6,18 @@ RAILS_ROOT = File.dirname(File.expand_path(__FILE__));
 
 class JavascriptTestTest < Test::Unit::TestCase
   
-  def test_javascript_test_runner
-    runner = JavaScriptTest::Runner.new do |t| 
+  def runner_for(test)
+    JavaScriptTest::Runner.new do |t| 
       t.mount("/test", RAILS_ROOT+'/test')
       t.mount('/test/javascript/assets', RAILS_ROOT+'/../assets')
-      t.run('test')
-      
+      t.run(test)
       t.browser(:firefox)
     end
-    
-    assert runner.successful?
+  end
+  
+  def test_javascript_test_runner
+    assert runner_for(:success).successful?
+    assert !(runner_for(:failure).successful?)
   end
   
 end
