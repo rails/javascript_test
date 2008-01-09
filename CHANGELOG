@@ -1,5 +1,14 @@
 *SVN*
 
+* Update to prototype + unittest 1.6.0.1 [nicwilliams]
+  The prototype unittest.js had evolved away from scriptaculous's verision.
+  NOTE: this involves the removal of the trial BDD system. Its possible people
+  are actually using this.
+  
+* Generates a public/javascripts/name.js library file when generating the test file [nicwilliams]
+  
+* Add -A/--use-app-assets generator option to allow usage of app's own prototype lib. [nicwillams]
+
 * Add JavaScriptTest namespace wrapper
 
 * Added test for JavaScript test runner
