@@ -34,8 +34,7 @@ In your Rails application root, run:
   
 You then can just open the individual .html test files in your browser.
 
-All in all, unittest.js is closely modelled on Test::Unit and there's 
-also experimental support for RSpec-style BDD testing. You can find lots 
+All in all, unittest.js is closely modelled on Test::Unit. You can find lots 
 of examples in both the Prototype and script.aculo.us SVN repositories.
 
 You'll find more info on how to write tests on the script.aculo.us wiki:
@@ -49,7 +48,7 @@ Join the Rails Spinoffs Google Group, or ask on #prototype on irc.freenode.net.
 ==Credits
 
 Big thanks with sugar on the top to Jon Tirsen, who authored the automated
-browser remote control-niceties.
+browser remote control-gadgetry.
 
 ==TODO
 
@@ -58,4 +57,4 @@ browser remote control-niceties.
 
 == License
 
-Copyright (c) 2005-2006 Thomas Fuchs, released under the MIT license
+Copyright (c) 2005-2008 Thomas Fuchs, released under the MIT license
