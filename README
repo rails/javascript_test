@@ -1,4 +1,4 @@
-=JavaScript testing plugin
+=JavaScript testing plugin.
 
 This plugin provides the script.aculo.us JavaScript unit testing framework
 in a way that integrates with Rails applications.
